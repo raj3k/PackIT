@@ -1,0 +1,8 @@
+in Infra:
+dotnet ef migrations add Init_Read --context ReadDbContext --startup-project ../PackIT.Api/ -o EF/Migrations
+
+"WriteConnectionString": "Host=localhost;Port=5433;Database=packIT;Username=postgres;Password=password",
+"ReadConnectionString": "Host=localhost;Port=5432;Database=packIT;Username=postgres;Password=password"
+
+docker run --name packIT_write -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=packIT -p 5433:5432 --rm -d postgres
+docker run --name packIT_read -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=packIT -p 5432:5432 --rm -d postgres

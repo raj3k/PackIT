@@ -1,0 +1,6 @@
+using MediatR;
+using PackIT.Shared.Abstractions.Commands;
+
+namespace PackIT.Application.Commands;
+
+public record RemovePackingItem(Guid PackingListId, string Name) : IRequest;
