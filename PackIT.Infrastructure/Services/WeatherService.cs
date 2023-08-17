@@ -8,7 +8,7 @@ namespace PackIT.Infrastructure.Services;
 
 public class WeatherService : IWeatherService
 {
-    private const string OpenWeatherMapApiKey = "dcb87d453a7a15a90949005ec2a34324";
+    private const string OpenWeatherMapApiKey = "";
     private const string TemperatureUnit = "metric";
 
     private readonly HttpClient _httpClient;
